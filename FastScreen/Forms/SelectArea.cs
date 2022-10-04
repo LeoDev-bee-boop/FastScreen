@@ -69,6 +69,17 @@ namespace FastScreen.Forms
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void butCptureThis_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
+            save.Show();
+        }
 
         Rectangle Bottom { get { return new Rectangle(0, this.ClientSize.Height - _, this.ClientSize.Width, _); } }
         Rectangle Right { get { return new Rectangle(this.ClientSize.Width - _, 0, _, this.ClientSize.Height); } }

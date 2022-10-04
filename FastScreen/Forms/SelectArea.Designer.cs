@@ -30,6 +30,8 @@ namespace FastScreen.Forms
         private void InitializeComponent()
         {
             this.panelDrag = new System.Windows.Forms.FlowLayoutPanel();
+            this.butCptureThis = new System.Windows.Forms.Button();
+            this.panelDrag.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDrag
@@ -38,12 +40,23 @@ namespace FastScreen.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDrag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelDrag.Controls.Add(this.butCptureThis);
             this.panelDrag.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.panelDrag.Location = new System.Drawing.Point(12, 12);
             this.panelDrag.Name = "panelDrag";
             this.panelDrag.Size = new System.Drawing.Size(776, 426);
             this.panelDrag.TabIndex = 1;
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
+            // 
+            // butCptureThis
+            // 
+            this.butCptureThis.Location = new System.Drawing.Point(3, 3);
+            this.butCptureThis.Name = "butCptureThis";
+            this.butCptureThis.Size = new System.Drawing.Size(75, 23);
+            this.butCptureThis.TabIndex = 2;
+            this.butCptureThis.Text = "Capture!";
+            this.butCptureThis.UseVisualStyleBackColor = true;
+            this.butCptureThis.Click += new System.EventHandler(this.butCptureThis_Click);
             // 
             // SelectArea
             // 
@@ -55,6 +68,7 @@ namespace FastScreen.Forms
             this.Name = "SelectArea";
             this.Text = "SelectArea";
             this.Load += new System.EventHandler(this.SelectArea_Load);
+            this.panelDrag.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -62,5 +76,6 @@ namespace FastScreen.Forms
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel panelDrag;
+        private System.Windows.Forms.Button butCptureThis;
     }
 }
