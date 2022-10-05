@@ -20,8 +20,7 @@ namespace FastScreen
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
-            SelectArea area = new SelectArea();
-            area.Show();
+            
         }
     }
 }

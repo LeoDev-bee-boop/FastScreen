@@ -26,6 +26,11 @@ namespace FastScreen.Forms
             pdCapture.Image = bmp;
         }
 
+        public Save()
+        {
+            InitializeComponent();
+        }
+
         private void Sava_Load(object sender, EventArgs e)
         {
 
@@ -41,6 +46,12 @@ namespace FastScreen.Forms
             {
                 pdCapture.Image.Save(sfd.FileName);
             }
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectArea area = new SelectArea();
+            area.Show();
         }
     }
 }
