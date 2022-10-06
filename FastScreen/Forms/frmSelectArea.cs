@@ -33,7 +33,7 @@ namespace FastScreen.Forms
 
         }
 
-        public frmSelectArea(frmSelectArea area)
+        public frmSelectArea()
         {
             InitializeComponent();
 
