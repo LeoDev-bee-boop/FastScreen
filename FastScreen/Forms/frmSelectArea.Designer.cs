@@ -1,7 +1,7 @@
 ﻿
 namespace FastScreen.Forms
 {
-    partial class SelectArea
+    partial class frmSelectArea
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace FastScreen.Forms
         private void InitializeComponent()
         {
             this.panelDrag = new System.Windows.Forms.FlowLayoutPanel();
-            this.butCptureThis = new System.Windows.Forms.Button();
+            this.butCaptureThis = new System.Windows.Forms.Button();
             this.panelDrag.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +40,7 @@ namespace FastScreen.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDrag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelDrag.Controls.Add(this.butCptureThis);
+            this.panelDrag.Controls.Add(this.butCaptureThis);
             this.panelDrag.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.panelDrag.Location = new System.Drawing.Point(12, 12);
             this.panelDrag.Name = "panelDrag";
@@ -48,24 +48,25 @@ namespace FastScreen.Forms
             this.panelDrag.TabIndex = 1;
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             // 
-            // butCptureThis
+            // butCaptureThis
             // 
-            this.butCptureThis.Location = new System.Drawing.Point(3, 3);
-            this.butCptureThis.Name = "butCptureThis";
-            this.butCptureThis.Size = new System.Drawing.Size(75, 23);
-            this.butCptureThis.TabIndex = 2;
-            this.butCptureThis.Text = "Capture!";
-            this.butCptureThis.UseVisualStyleBackColor = true;
-            this.butCptureThis.Click += new System.EventHandler(this.butCptureThis_Click);
+            this.butCaptureThis.Location = new System.Drawing.Point(3, 3);
+            this.butCaptureThis.Name = "butCaptureThis";
+            this.butCaptureThis.Size = new System.Drawing.Size(75, 23);
+            this.butCaptureThis.TabIndex = 2;
+            this.butCaptureThis.Text = "Capture!";
+            this.butCaptureThis.UseVisualStyleBackColor = true;
+            this.butCaptureThis.Click += new System.EventHandler(this.butCptureThis_Click);
             // 
-            // SelectArea
+            // frmSelectArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SelectArea";
+            this.Name = "frmSelectArea";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectArea";
             this.Load += new System.EventHandler(this.SelectArea_Load);
             this.panelDrag.ResumeLayout(false);
@@ -76,6 +77,6 @@ namespace FastScreen.Forms
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel panelDrag;
-        private System.Windows.Forms.Button butCptureThis;
+        private System.Windows.Forms.Button butCaptureThis;
     }
 }

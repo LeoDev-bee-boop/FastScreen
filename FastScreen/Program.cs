@@ -17,7 +17,7 @@ namespace FastScreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Save());
+            Application.Run(new frmPrincipal());
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FastScreen.Forms
 {
-    public partial class SelectArea : Form
+    public partial class frmSelectArea : Form
     {
         [DllImport("User32.dll")]
         public static extern bool ReleaseCapture();
@@ -33,7 +33,7 @@ namespace FastScreen.Forms
 
         }
 
-        public SelectArea()
+        public frmSelectArea(frmSelectArea area)
         {
             InitializeComponent();
 
@@ -77,7 +77,7 @@ namespace FastScreen.Forms
         private void butCptureThis_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
+            frmPrincipal save = new frmPrincipal(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
             save.Show();
         }
 

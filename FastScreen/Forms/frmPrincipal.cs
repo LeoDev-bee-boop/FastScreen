@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace FastScreen.Forms
 {
-    public partial class Save : Form
+    public partial class frmPrincipal : Form
     {
         Bitmap bmp;
 
-        public Save(Int32 x, Int32 y, Int32 w, Int32 h, Size s)
+        public frmPrincipal(Int32 x, Int32 y, Int32 w, Int32 h, Size s)
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace FastScreen.Forms
             pdCapture.Image = bmp;
         }
 
-        public Save()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
@@ -50,7 +50,7 @@ namespace FastScreen.Forms
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SelectArea area = new SelectArea();
+            frmSelectArea area = new frmSelectArea();
             area.Show();
         }
     }

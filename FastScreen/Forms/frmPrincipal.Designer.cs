@@ -1,7 +1,7 @@
 ﻿
 namespace FastScreen.Forms
 {
-    partial class Save
+    partial class frmPrincipal
     {
         /// <summary>
         /// Required designer variable.
