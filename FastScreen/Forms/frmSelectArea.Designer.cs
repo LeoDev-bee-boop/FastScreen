@@ -50,6 +50,7 @@ namespace FastScreen.Forms
             // 
             // butCaptureThis
             // 
+            this.butCaptureThis.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.butCaptureThis.Location = new System.Drawing.Point(3, 3);
             this.butCaptureThis.Name = "butCaptureThis";
             this.butCaptureThis.Size = new System.Drawing.Size(75, 23);
@@ -60,6 +61,7 @@ namespace FastScreen.Forms
             // 
             // frmSelectArea
             // 
+            this.AcceptButton = this.butCaptureThis;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -68,7 +70,6 @@ namespace FastScreen.Forms
             this.Name = "frmSelectArea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectArea";
-            this.Load += new System.EventHandler(this.SelectArea_Load);
             this.panelDrag.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastScreen.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,20 +16,11 @@ namespace FastScreen.Forms
     {
         Bitmap bmp;
 
-        public frmPrincipal(Int32 x, Int32 y, Int32 w, Int32 h, Size s)
-        {
-            InitializeComponent();
-
-            Rectangle rect = new Rectangle(x, y, w, h);
-            bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
-            Graphics g = Graphics.FromImage(bmp);
-            g.CopyFromScreen(rect.Left, rect.Top, 0, 0, s, CopyPixelOperation.SourceCopy);
-            pdCapture.Image = bmp;
-        }
-
         public frmPrincipal()
         {
             InitializeComponent();
+
+            
         }
 
         private void Sava_Load(object sender, EventArgs e)
@@ -50,8 +42,17 @@ namespace FastScreen.Forms
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSelectArea area = new frmSelectArea();
-            area.Show();
+            AreaRecortada area = new AreaRecortada();
+
+            using (frmSelectArea frmSelectArea = new frmSelectArea())
+                if (frmSelectArea.ShowDialog() == DialogResult.OK)
+                    area = frmSelectArea.retornaAreaSelecionada();
+
+            Rectangle rect = new Rectangle(area.x, area.y, area.w, area.h);
+            bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
+            Graphics g = Graphics.FromImage(bmp);
+            g.CopyFromScreen(rect.Left, rect.Top, 0, 0, area.s, CopyPixelOperation.SourceCopy);
+            pdCapture.Image = bmp;
         }
     }
 }

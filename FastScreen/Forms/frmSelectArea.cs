@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastScreen.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,11 +27,6 @@ namespace FastScreen.Forms
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
-        }
-
-        private void SelectArea_Load(object sender, EventArgs e)
-        {
-
         }
 
         public frmSelectArea()
@@ -76,9 +72,22 @@ namespace FastScreen.Forms
 
         private void butCptureThis_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmPrincipal save = new frmPrincipal(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
-            save.Show();
+            //this.Hide();
+            //frmPrincipal save = new frmPrincipal(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
+            //save.Show();
+        }
+
+        public AreaRecortada retornaAreaSelecionada()
+        {
+            AreaRecortada area = new AreaRecortada();
+
+            area.x = this.Location.X;
+            area.y = this.Location.Y;
+            area.w = this.Width;
+            area.h = this.Height;
+            area.s = this.Size;
+
+            return area;
         }
 
         Rectangle Bottom { get { return new Rectangle(0, this.ClientSize.Height - _, this.ClientSize.Width, _); } }
