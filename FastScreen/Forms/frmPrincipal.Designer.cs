@@ -35,22 +35,25 @@ namespace FastScreen.Forms
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oCRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pdCapture)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pdCapture
             // 
-            this.pdCapture.Location = new System.Drawing.Point(12, 69);
+            this.pdCapture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pdCapture.Location = new System.Drawing.Point(12, 27);
             this.pdCapture.Name = "pdCapture";
-            this.pdCapture.Size = new System.Drawing.Size(776, 369);
-            this.pdCapture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pdCapture.Size = new System.Drawing.Size(776, 332);
             this.pdCapture.TabIndex = 0;
             this.pdCapture.TabStop = false;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -62,22 +65,28 @@ namespace FastScreen.Forms
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ferramentasToolStripMenuItem});
+            this.ferramentasToolStripMenuItem,
+            this.salvarToolStripMenuItem});
+            this.menuToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // ferramentasToolStripMenuItem
             // 
+            this.ferramentasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printToolStripMenuItem,
             this.oCRToolStripMenuItem});
+            this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
             this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
             // 
             // printToolStripMenuItem
             // 
+            this.printToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.printToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printToolStripMenuItem.Text = "Print";
@@ -85,31 +94,32 @@ namespace FastScreen.Forms
             // 
             // oCRToolStripMenuItem
             // 
+            this.oCRToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.oCRToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.oCRToolStripMenuItem.Name = "oCRToolStripMenuItem";
             this.oCRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oCRToolStripMenuItem.Text = "OCR";
             // 
-            // btnSave
+            // salvarToolStripMenuItem
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 27);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "button1";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.salvarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.salvarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salvarToolStripMenuItem.Text = "Salvar";
+            this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
-            // Save
+            // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSave);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(800, 371);
             this.Controls.Add(this.pdCapture);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Save";
+            this.Name = "frmPrincipal";
             this.Text = "Save";
             this.Load += new System.EventHandler(this.Sava_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pdCapture)).EndInit();
@@ -128,6 +138,6 @@ namespace FastScreen.Forms
         private System.Windows.Forms.ToolStripMenuItem ferramentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oCRToolStripMenuItem;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
     }
 }

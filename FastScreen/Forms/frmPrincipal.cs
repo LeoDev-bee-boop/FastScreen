@@ -28,18 +28,6 @@ namespace FastScreen.Forms
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.CheckPathExists = true;
-            sfd.FileName = "Capture";
-            sfd.Filter = "PNG Image(*.png)|*.png|JPG Image(*.jpg)|*.jpg|BMP Image(*.bmp)|*.bmp";
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                pdCapture.Image.Save(sfd.FileName);
-            }
-        }
-
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AreaRecortada area = new AreaRecortada();
@@ -53,6 +41,18 @@ namespace FastScreen.Forms
             Graphics g = Graphics.FromImage(bmp);
             g.CopyFromScreen(rect.Left, rect.Top, 0, 0, area.s, CopyPixelOperation.SourceCopy);
             pdCapture.Image = bmp;
+        }
+
+        private void salvarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.CheckPathExists = true;
+            sfd.FileName = "Capture";
+            sfd.Filter = "PNG Image(*.png)|*.png|JPG Image(*.jpg)|*.jpg|BMP Image(*.bmp)|*.bmp";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                pdCapture.Image.Save(sfd.FileName);
+            }
         }
     }
 }
