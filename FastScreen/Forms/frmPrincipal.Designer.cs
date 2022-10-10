@@ -99,6 +99,7 @@ namespace FastScreen.Forms
             this.oCRToolStripMenuItem.Name = "oCRToolStripMenuItem";
             this.oCRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oCRToolStripMenuItem.Text = "OCR";
+            this.oCRToolStripMenuItem.Click += new System.EventHandler(this.oCRToolStripMenuItem_Click);
             // 
             // salvarToolStripMenuItem
             // 

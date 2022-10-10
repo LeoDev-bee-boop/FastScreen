@@ -54,5 +54,11 @@ namespace FastScreen.Forms
                 pdCapture.Image.Save(sfd.FileName);
             }
         }
+
+        private void oCRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OCR ocr = new OCR();
+            ocr.AnalisaImagem();
+        }
     }
 }

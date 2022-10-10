@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Tesseract;
+
+namespace FastScreen.Models
+{
+    public class OCR
+    {
+        public void AnalisaImagem()
+        {
+            var testImage = @"C:\Users\Leonardosevalhos\Pictures\teste\boa tarde.jpg";
+
+            try
+            {
+                using (var engine = new TesseractEngine(@"tessdata", "por", EngineMode.Default))
+                {
+                    using (var img = Pix.LoadFromFile(testImage))
+                    {
+                        using (var page = engine.Process(img))
+                        {
+                            var texto = page.GetText();
+
+                            MessageBox.Show(page.GetText() + "\n\n" + "Taxa de Precisão{0}" + page.GetMeanConfidence());
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+    }
+}
