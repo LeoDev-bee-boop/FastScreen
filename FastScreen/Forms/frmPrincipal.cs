@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,8 +58,26 @@ namespace FastScreen.Forms
 
         private void oCRToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Instânciando classe
             OCR ocr = new OCR();
-            ocr.AnalisaImagem();
+
+            //Instânciando propriedade
+            byte[] imgByte;
+
+            //Convertendo Image para byte
+            imgByte = ImageToByteArray(pdCapture.Image);
+
+            ocr.AnalisaImagem(imgByte);
+        }
+
+        public byte[] ImageToByteArray(Image imagem)
+        {
+            using (MemoryStream mStream = new MemoryStream())
+            {
+                imagem.Save(mStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                return mStream.ToArray();
+            }
         }
     }
 }

@@ -10,15 +10,14 @@ namespace FastScreen.Models
 {
     public class OCR
     {
-        public void AnalisaImagem()
+        public void AnalisaImagem(byte[] image)
         {
-            var testImage = @"C:\Users\Leonardosevalhos\Pictures\teste\boa tarde.jpg";
 
             try
             {
                 using (var engine = new TesseractEngine(@"tessdata", "por", EngineMode.Default))
                 {
-                    using (var img = Pix.LoadFromFile(testImage))
+                    using (var img = Pix.LoadFromMemory(image))
                     {
                         using (var page = engine.Process(img))
                         {
