@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastScreen.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,6 @@ namespace FastScreen.Models
     {
         public void AnalisaImagem(byte[] image)
         {
-
             try
             {
                 using (var engine = new TesseractEngine(@"tessdata", "por", EngineMode.Default))
@@ -22,8 +22,12 @@ namespace FastScreen.Models
                         using (var page = engine.Process(img))
                         {
                             var texto = page.GetText();
+                            var precisao = page.GetMeanConfidence();
 
-                            MessageBox.Show(page.GetText() + "\n\n" + "Taxa de Precisão{0}" + page.GetMeanConfidence());
+                            frmMessageBox frmMessage = new frmMessageBox(texto, precisao);
+                            frmMessage.ShowDialog();
+
+                            //MessageBox.Show(page.GetText() + "\n\n" + "Taxa de Precisão{0}" + page.GetMeanConfidence());
                         }
                     }
                 }
