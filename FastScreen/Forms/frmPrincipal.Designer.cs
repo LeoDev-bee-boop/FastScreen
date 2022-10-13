@@ -58,8 +58,9 @@ namespace FastScreen.Forms
             this.ferramentasToolStripMenuItem,
             this.salvarToolStripMenuItem});
             this.menuToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.menuToolStripMenuItem.Image = global::FastScreen.Properties.Resources.menu_aberto;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // ferramentasToolStripMenuItem
@@ -69,16 +70,18 @@ namespace FastScreen.Forms
             this.printToolStripMenuItem,
             this.oCRToolStripMenuItem});
             this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.ferramentasToolStripMenuItem.Image = global::FastScreen.Properties.Resources.tool_box;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
-            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.printToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.printToolStripMenuItem.Image = global::FastScreen.Properties.Resources.dslr_camera;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
@@ -86,8 +89,9 @@ namespace FastScreen.Forms
             // 
             this.oCRToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.oCRToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.oCRToolStripMenuItem.Image = global::FastScreen.Properties.Resources.rotacao_do_circulo_de_duas_setas_no_sentido_horario;
             this.oCRToolStripMenuItem.Name = "oCRToolStripMenuItem";
-            this.oCRToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.oCRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oCRToolStripMenuItem.Text = "OCR";
             this.oCRToolStripMenuItem.Click += new System.EventHandler(this.oCRToolStripMenuItem_Click);
             // 
@@ -95,8 +99,9 @@ namespace FastScreen.Forms
             // 
             this.salvarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.salvarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.salvarToolStripMenuItem.Image = global::FastScreen.Properties.Resources.floppy_disk;
             this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salvarToolStripMenuItem.Text = "Salvar";
             this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
