@@ -72,7 +72,7 @@ namespace FastScreen.Forms
             this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.ferramentasToolStripMenuItem.Image = global::FastScreen.Properties.Resources.tool_box;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
-            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
             // 
             // printToolStripMenuItem
@@ -81,7 +81,7 @@ namespace FastScreen.Forms
             this.printToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.printToolStripMenuItem.Image = global::FastScreen.Properties.Resources.dslr_camera;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
@@ -91,7 +91,7 @@ namespace FastScreen.Forms
             this.oCRToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.oCRToolStripMenuItem.Image = global::FastScreen.Properties.Resources.rotacao_do_circulo_de_duas_setas_no_sentido_horario;
             this.oCRToolStripMenuItem.Name = "oCRToolStripMenuItem";
-            this.oCRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oCRToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.oCRToolStripMenuItem.Text = "OCR";
             this.oCRToolStripMenuItem.Click += new System.EventHandler(this.oCRToolStripMenuItem_Click);
             // 
@@ -101,7 +101,7 @@ namespace FastScreen.Forms
             this.salvarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.salvarToolStripMenuItem.Image = global::FastScreen.Properties.Resources.floppy_disk;
             this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.salvarToolStripMenuItem.Text = "Salvar";
             this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
@@ -129,7 +129,7 @@ namespace FastScreen.Forms
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.Text = "Save";
-            this.Load += new System.EventHandler(this.Sava_Load);
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdCapture)).EndInit();
