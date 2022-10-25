@@ -79,5 +79,15 @@ namespace FastScreen.Forms
                 return mStream.ToArray();
             }
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetClipboard()
+        {
+            Clipboard.SetImage(pdCapture.Image);
+        }
     }
 }
