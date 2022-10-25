@@ -37,6 +37,7 @@ namespace FastScreen.Forms
             this.oCRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pdCapture = new System.Windows.Forms.PictureBox();
+            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdCapture)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,8 @@ namespace FastScreen.Forms
             this.ferramentasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printToolStripMenuItem,
-            this.oCRToolStripMenuItem});
+            this.oCRToolStripMenuItem,
+            this.shareToolStripMenuItem});
             this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.ferramentasToolStripMenuItem.Image = global::FastScreen.Properties.Resources.tool_box;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
@@ -116,6 +118,15 @@ namespace FastScreen.Forms
             this.pdCapture.TabIndex = 0;
             this.pdCapture.TabStop = false;
             // 
+            // shareToolStripMenuItem
+            // 
+            this.shareToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.shareToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.shareToolStripMenuItem.Image = global::FastScreen.Properties.Resources.share;
+            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shareToolStripMenuItem.Text = "Share";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,5 +158,6 @@ namespace FastScreen.Forms
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oCRToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shareToolStripMenuItem;
     }
 }
