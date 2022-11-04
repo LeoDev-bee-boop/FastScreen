@@ -36,6 +36,7 @@ namespace FastScreen.Forms
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oCRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desenharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pdCapture = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -70,7 +71,8 @@ namespace FastScreen.Forms
             this.ferramentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printToolStripMenuItem,
             this.oCRToolStripMenuItem,
-            this.shareToolStripMenuItem});
+            this.shareToolStripMenuItem,
+            this.desenharToolStripMenuItem});
             this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.ferramentasToolStripMenuItem.Image = global::FastScreen.Properties.Resources.toolbox;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
@@ -105,6 +107,15 @@ namespace FastScreen.Forms
             this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
             this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.shareToolStripMenuItem.Text = "Share";
+            // 
+            // desenharToolStripMenuItem
+            // 
+            this.desenharToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.desenharToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.desenharToolStripMenuItem.Image = global::FastScreen.Properties.Resources.pen_2;
+            this.desenharToolStripMenuItem.Name = "desenharToolStripMenuItem";
+            this.desenharToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.desenharToolStripMenuItem.Text = "Desenhar";
             // 
             // salvarToolStripMenuItem
             // 
@@ -159,5 +170,6 @@ namespace FastScreen.Forms
         private System.Windows.Forms.ToolStripMenuItem oCRToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem desenharToolStripMenuItem;
     }
 }
