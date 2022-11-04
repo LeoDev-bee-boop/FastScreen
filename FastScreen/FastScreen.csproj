@@ -110,9 +110,6 @@
     <None Include="Resources\close %284%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\diskette.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\floppy-disk.png" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +129,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolbox2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Tesseract.4.1.1\build\Tesseract.targets" Condition="Exists('..\packages\Tesseract.4.1.1\build\Tesseract.targets')" />

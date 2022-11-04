@@ -35,9 +35,9 @@ namespace FastScreen.Forms
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oCRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pdCapture = new System.Windows.Forms.PictureBox();
-            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdCapture)).BeginInit();
             this.SuspendLayout();
@@ -72,18 +72,18 @@ namespace FastScreen.Forms
             this.oCRToolStripMenuItem,
             this.shareToolStripMenuItem});
             this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ferramentasToolStripMenuItem.Image = global::FastScreen.Properties.Resources.tool_box;
+            this.ferramentasToolStripMenuItem.Image = global::FastScreen.Properties.Resources.toolbox;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
-            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ferramentasToolStripMenuItem.Text = "Ferramentas";
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.printToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.printToolStripMenuItem.Image = global::FastScreen.Properties.Resources.dslr_camera;
+            this.printToolStripMenuItem.Image = global::FastScreen.Properties.Resources.camera;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
@@ -91,19 +91,28 @@ namespace FastScreen.Forms
             // 
             this.oCRToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.oCRToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.oCRToolStripMenuItem.Image = global::FastScreen.Properties.Resources.rotacao_do_circulo_de_duas_setas_no_sentido_horario;
+            this.oCRToolStripMenuItem.Image = global::FastScreen.Properties.Resources.ocr;
             this.oCRToolStripMenuItem.Name = "oCRToolStripMenuItem";
-            this.oCRToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.oCRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oCRToolStripMenuItem.Text = "OCR";
             this.oCRToolStripMenuItem.Click += new System.EventHandler(this.oCRToolStripMenuItem_Click);
+            // 
+            // shareToolStripMenuItem
+            // 
+            this.shareToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.shareToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.shareToolStripMenuItem.Image = global::FastScreen.Properties.Resources.share;
+            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shareToolStripMenuItem.Text = "Share";
             // 
             // salvarToolStripMenuItem
             // 
             this.salvarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
             this.salvarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.salvarToolStripMenuItem.Image = global::FastScreen.Properties.Resources.floppy_disk;
+            this.salvarToolStripMenuItem.Image = global::FastScreen.Properties.Resources.diskette2;
             this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salvarToolStripMenuItem.Text = "Salvar";
             this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
@@ -118,15 +127,6 @@ namespace FastScreen.Forms
             this.pdCapture.TabIndex = 0;
             this.pdCapture.TabStop = false;
             // 
-            // shareToolStripMenuItem
-            // 
-            this.shareToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
-            this.shareToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.shareToolStripMenuItem.Image = global::FastScreen.Properties.Resources.share;
-            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
-            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.shareToolStripMenuItem.Text = "Share";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,7 +139,7 @@ namespace FastScreen.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
-            this.Text = "Save";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
