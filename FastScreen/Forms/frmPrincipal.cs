@@ -179,6 +179,9 @@ namespace FastScreen.Forms
         //------------------------------------------------------------->
         private void CapturaPrint()
         {
+            //Minimizando form
+            this.WindowState = FormWindowState.Minimized;
+            
             //Classe responsável as cordenadas da área de print
             AreaRecortada area = new AreaRecortada();
 
@@ -195,6 +198,9 @@ namespace FastScreen.Forms
             pdCapture.Image = bmp;
 
             g = Graphics.FromImage(pdCapture.Image);
+
+            //Mostrando form novamente
+            this.WindowState = FormWindowState.Normal;
         }
         //------------------------------------------------------------->
         private void CapturaOCR()
