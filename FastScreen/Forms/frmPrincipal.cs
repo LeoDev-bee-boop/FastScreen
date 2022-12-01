@@ -22,31 +22,38 @@ namespace FastScreen.Forms
         bool paint = false;
         Point px, py;
         Pen p = new Pen(Color.Black, 1);
+        Pen erase = new Pen(Color.White, 10);
         Graphics g;
 
         public frmPrincipal()
         {
             InitializeComponent();
 
-            bm = new Bitmap(pdCapture.Width, pdCapture.Height);
-            g = Graphics.FromImage(bm);
-            g.Clear(Color.White);
-            pdCapture.Image = bm;
+            //bm = new Bitmap(pdCapture.Width, pdCapture.Height);
+            //g = Graphics.FromImage(bm);
+            //g.Clear(Color.White);
+            //pdCapture.Image = bm;
         }
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Classe responsável as cordenadas da área de print
             AreaRecortada area = new AreaRecortada();
 
+            //Chamando form que passara as coordenadas dos pixel da tela de print
             using (frmSelectArea frmSelectArea = new frmSelectArea())
                 if (frmSelectArea.ShowDialog() == DialogResult.OK)
                     area = frmSelectArea.retornaAreaSelecionada();
 
+            //Passando extremidades da área da print para um retângulo            
             Rectangle rect = new Rectangle(area.x, area.y, area.w, area.h);
             bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
-            Graphics g = Graphics.FromImage(bmp);
-            g.CopyFromScreen(rect.Left, rect.Top, 0, 0, area.s, CopyPixelOperation.SourceCopy);
+            Graphics graphics = Graphics.FromImage(bmp);
+            graphics.CopyFromScreen(rect.Left, rect.Top, 0, 0, area.s, CopyPixelOperation.SourceCopy);
             pdCapture.Image = bmp;
+
+            g = Graphics.FromImage(pdCapture.Image);
+
         }
 
         private void salvarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,6 +79,19 @@ namespace FastScreen.Forms
 
             sX = x - cX;
             sY = y - cY;
+            
+            if (index == 3)
+            {
+                g.DrawEllipse(p, 378, 108, 173, 174);
+            }
+            if (index == 4)
+            {
+                g.DrawRectangle(p, cX, cY, sX, sY);
+            }
+            if (index == 5)
+            {
+                g.DrawLine(p, cX, cY, x, y);
+            }
         }
 
         private void pdCapture_MouseDown(object sender, MouseEventArgs e)
@@ -83,6 +103,47 @@ namespace FastScreen.Forms
             cY = e.Y;
         }
 
+        private void apagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            index = 2;
+        }
+
+        private void elipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            index = 3;
+        }
+
+        private void pdCapture_Paint(object sender, PaintEventArgs e)
+        {
+            g = e.Graphics;
+
+            if (paint)
+            {
+                if (index == 3)
+                {
+                    g.DrawEllipse(p, cX, cY, sX, sY);
+                }
+                if (index == 4)
+                {
+                    g.DrawRectangle(p, cX, cY, sX, sY);
+                }
+                if (index == 5)
+                {
+                    g.DrawLine(p, cX, cY, x, y);
+                }
+            }
+        }
+
+        private void retânguloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            index = 4;
+        }
+
+        private void linhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            index = 5;
+        }
+
         private void pdCapture_MouseMove(object sender, MouseEventArgs e)
         {
             if (paint)
@@ -91,13 +152,14 @@ namespace FastScreen.Forms
                 {
                     px = e.Location;
                     g.DrawLine(p, px, py);
-                    py = px;
+                    py = px;                    
                 }
                 if (index == 2)
                 {
-                   
-                }
-
+                    px = e.Location;
+                    g.DrawLine(erase, px, py);
+                    py = px;
+                }                
             }
             pdCapture.Refresh();
 

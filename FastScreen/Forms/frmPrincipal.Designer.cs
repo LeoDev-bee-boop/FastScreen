@@ -38,10 +38,10 @@ namespace FastScreen.Forms
             this.desenharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pdCapture = new System.Windows.Forms.PictureBox();
             this.retânguloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pdCapture = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdCapture)).BeginInit();
             this.SuspendLayout();
@@ -123,6 +123,7 @@ namespace FastScreen.Forms
             this.apagarToolStripMenuItem.Name = "apagarToolStripMenuItem";
             this.apagarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.apagarToolStripMenuItem.Text = "Apagar";
+            this.apagarToolStripMenuItem.Click += new System.EventHandler(this.apagarToolStripMenuItem_Click);
             // 
             // elipseToolStripMenuItem
             // 
@@ -132,6 +133,27 @@ namespace FastScreen.Forms
             this.elipseToolStripMenuItem.Name = "elipseToolStripMenuItem";
             this.elipseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.elipseToolStripMenuItem.Text = "Elipse";
+            this.elipseToolStripMenuItem.Click += new System.EventHandler(this.elipseToolStripMenuItem_Click);
+            // 
+            // retânguloToolStripMenuItem
+            // 
+            this.retânguloToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.retânguloToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.retânguloToolStripMenuItem.Image = global::FastScreen.Properties.Resources.rectangle;
+            this.retânguloToolStripMenuItem.Name = "retânguloToolStripMenuItem";
+            this.retânguloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.retânguloToolStripMenuItem.Text = "Retângulo";
+            this.retânguloToolStripMenuItem.Click += new System.EventHandler(this.retânguloToolStripMenuItem_Click);
+            // 
+            // linhaToolStripMenuItem
+            // 
+            this.linhaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.linhaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.linhaToolStripMenuItem.Image = global::FastScreen.Properties.Resources.diagonal_line;
+            this.linhaToolStripMenuItem.Name = "linhaToolStripMenuItem";
+            this.linhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.linhaToolStripMenuItem.Text = "Linha";
+            this.linhaToolStripMenuItem.Click += new System.EventHandler(this.linhaToolStripMenuItem_Click);
             // 
             // salvarToolStripMenuItem
             // 
@@ -148,32 +170,15 @@ namespace FastScreen.Forms
             this.pdCapture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pdCapture.Location = new System.Drawing.Point(12, 27);
+            this.pdCapture.Location = new System.Drawing.Point(0, 27);
             this.pdCapture.Name = "pdCapture";
             this.pdCapture.Size = new System.Drawing.Size(776, 332);
             this.pdCapture.TabIndex = 0;
             this.pdCapture.TabStop = false;
+            this.pdCapture.Paint += new System.Windows.Forms.PaintEventHandler(this.pdCapture_Paint);
             this.pdCapture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pdCapture_MouseDown);
             this.pdCapture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pdCapture_MouseMove);
             this.pdCapture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pdCapture_MouseUp);
-            // 
-            // retânguloToolStripMenuItem
-            // 
-            this.retânguloToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
-            this.retânguloToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.retânguloToolStripMenuItem.Image = global::FastScreen.Properties.Resources.rectangle;
-            this.retânguloToolStripMenuItem.Name = "retânguloToolStripMenuItem";
-            this.retânguloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.retânguloToolStripMenuItem.Text = "Retângulo";
-            // 
-            // linhaToolStripMenuItem
-            // 
-            this.linhaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
-            this.linhaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.linhaToolStripMenuItem.Image = global::FastScreen.Properties.Resources.diagonal_line;
-            this.linhaToolStripMenuItem.Name = "linhaToolStripMenuItem";
-            this.linhaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.linhaToolStripMenuItem.Text = "Linha";
             // 
             // frmPrincipal
             // 
