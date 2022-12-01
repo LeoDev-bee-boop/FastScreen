@@ -44,7 +44,7 @@ namespace FastScreen.Forms
             this.panelDrag.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.panelDrag.Location = new System.Drawing.Point(12, 12);
             this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(776, 426);
+            this.panelDrag.Size = new System.Drawing.Size(333, 135);
             this.panelDrag.TabIndex = 1;
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             // 
@@ -55,7 +55,7 @@ namespace FastScreen.Forms
             this.butCaptureThis.Name = "butCaptureThis";
             this.butCaptureThis.Size = new System.Drawing.Size(75, 23);
             this.butCaptureThis.TabIndex = 2;
-            this.butCaptureThis.Text = "Capture!";
+            this.butCaptureThis.Text = "Capturar!";
             this.butCaptureThis.UseVisualStyleBackColor = true;
             this.butCaptureThis.Click += new System.EventHandler(this.butCptureThis_Click);
             // 
@@ -64,7 +64,7 @@ namespace FastScreen.Forms
             this.AcceptButton = this.butCaptureThis;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(357, 159);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSelectArea";

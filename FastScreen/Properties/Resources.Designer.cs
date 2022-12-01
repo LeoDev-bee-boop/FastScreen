@@ -153,6 +153,16 @@ namespace FastScreen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap limpeza_de_dados {
+            get {
+                object obj = ResourceManager.GetObject("limpeza_de_dados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu_aberto {
             get {
                 object obj = ResourceManager.GetObject("menu_aberto", resourceCulture);
@@ -176,6 +186,16 @@ namespace FastScreen.Properties {
         internal static System.Drawing.Bitmap oval {
             get {
                 object obj = ResourceManager.GetObject("oval", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paleta_de_cores {
+            get {
+                object obj = ResourceManager.GetObject("paleta_de_cores", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

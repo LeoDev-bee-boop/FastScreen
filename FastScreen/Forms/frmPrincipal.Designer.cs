@@ -41,6 +41,8 @@ namespace FastScreen.Forms
             this.retânguloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limparToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pdCapture = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -80,7 +82,9 @@ namespace FastScreen.Forms
             this.elipseToolStripMenuItem,
             this.retânguloToolStripMenuItem,
             this.linhaToolStripMenuItem,
-            this.copiarToolStripMenuItem});
+            this.copiarToolStripMenuItem,
+            this.coresToolStripMenuItem,
+            this.limparToolStripMenuItem});
             this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.ferramentasToolStripMenuItem.Image = global::FastScreen.Properties.Resources.toolbox;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
@@ -167,6 +171,25 @@ namespace FastScreen.Forms
             this.copiarToolStripMenuItem.Text = "Copiar";
             this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
+            // coresToolStripMenuItem
+            // 
+            this.coresToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.coresToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.coresToolStripMenuItem.Image = global::FastScreen.Properties.Resources.paleta_de_cores;
+            this.coresToolStripMenuItem.Name = "coresToolStripMenuItem";
+            this.coresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.coresToolStripMenuItem.Text = "Paleta de cores";
+            this.coresToolStripMenuItem.Click += new System.EventHandler(this.coresToolStripMenuItem_Click);
+            // 
+            // limparToolStripMenuItem
+            // 
+            this.limparToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.limparToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.limparToolStripMenuItem.Image = global::FastScreen.Properties.Resources.limpeza_de_dados;
+            this.limparToolStripMenuItem.Name = "limparToolStripMenuItem";
+            this.limparToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.limparToolStripMenuItem.Text = "Limpar";
+            // 
             // salvarToolStripMenuItem
             // 
             this.salvarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
@@ -228,5 +251,7 @@ namespace FastScreen.Forms
         private System.Windows.Forms.ToolStripMenuItem retânguloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem linhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem limparToolStripMenuItem;
     }
 }

@@ -41,10 +41,10 @@ namespace FastScreen.Forms
 
         protected override void OnPaint(PaintEventArgs e) // you can safely omit this method if you want
         {
-            e.Graphics.FillRectangle(Brushes.Green, Top);
-            e.Graphics.FillRectangle(Brushes.Green, Left);
-            e.Graphics.FillRectangle(Brushes.Green, Right);
-            e.Graphics.FillRectangle(Brushes.Green, Bottom);
+            e.Graphics.FillRectangle(Brushes.Red, Top);
+            e.Graphics.FillRectangle(Brushes.Red, Left);
+            e.Graphics.FillRectangle(Brushes.Red, Right);
+            e.Graphics.FillRectangle(Brushes.Red, Bottom);
         }
 
         private const int

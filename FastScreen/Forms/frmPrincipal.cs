@@ -19,6 +19,7 @@ namespace FastScreen.Forms
         #region ..:: Propriedades ::..
         Pen p = new Pen(Color.Black, 1);
         Pen erase = new Pen(Color.White, 10);
+        ColorDialog cd = new ColorDialog();
 
         Bitmap bmp;
         Graphics g;
@@ -155,6 +156,16 @@ namespace FastScreen.Forms
         {
             index = 3;
         }
+
+        private void coresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlteraCor();
+        }
+        //------------------------------------------------------------->
+        private void limparToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LimpaPictureBox();
+        }
         //------------------------------------------------------------->
         private void salvarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -179,9 +190,9 @@ namespace FastScreen.Forms
         //------------------------------------------------------------->
         private void CapturaPrint()
         {
-            //Minimizando form
-            this.WindowState = FormWindowState.Minimized;
-            
+            //Escondendo Form
+            this.Hide();
+
             //Classe responsável as cordenadas da área de print
             AreaRecortada area = new AreaRecortada();
 
@@ -197,10 +208,11 @@ namespace FastScreen.Forms
             graphics.CopyFromScreen(rect.Left, rect.Top, 0, 0, area.s, CopyPixelOperation.SourceCopy);
             pdCapture.Image = bmp;
 
+            //Instância da classe gráfica recebendo imagem do picture box
             g = Graphics.FromImage(pdCapture.Image);
 
-            //Mostrando form novamente
-            this.WindowState = FormWindowState.Normal;
+            //Exibindo form
+            this.Show();
         }
         //------------------------------------------------------------->
         private void CapturaOCR()
@@ -214,6 +226,7 @@ namespace FastScreen.Forms
             //Convertendo Image para byte
             imgByte = ImageToByteArray(pdCapture.Image);
 
+            //Método de análise de imagem
             ocr.AnalisaImagem(imgByte);
         }
         //------------------------------------------------------------->
@@ -232,6 +245,18 @@ namespace FastScreen.Forms
             }
         }
         //------------------------------------------------------------->
+        private void AlteraCor()
+        {
+            cd.ShowDialog();
+            p.Color = cd.Color;
+            coresToolStripMenuItem.ForeColor = cd.Color;
+        }
+        //------------------------------------------------------------->
+        private void LimpaPictureBox()
+        {
+            pdCapture.Image = null;
+
+        }
         #endregion ..:: Métodos Auxiliares ::..
 
 
