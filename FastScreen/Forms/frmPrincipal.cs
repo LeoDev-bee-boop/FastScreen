@@ -82,7 +82,7 @@ namespace FastScreen.Forms
             
             if (index == 3)
             {
-                g.DrawEllipse(p, 378, 108, 173, 174);
+                g.DrawEllipse(p, cX, cY, sX, sY);
             }
             if (index == 4)
             {
@@ -115,21 +115,21 @@ namespace FastScreen.Forms
 
         private void pdCapture_Paint(object sender, PaintEventArgs e)
         {
-            g = e.Graphics;
+            Graphics a = e.Graphics;
 
             if (paint)
             {
                 if (index == 3)
                 {
-                    g.DrawEllipse(p, cX, cY, sX, sY);
+                    a.DrawEllipse(p, cX, cY, sX, sY);
                 }
                 if (index == 4)
                 {
-                    g.DrawRectangle(p, cX, cY, sX, sY);
+                    a.DrawRectangle(p, cX, cY, sX, sY);
                 }
                 if (index == 5)
                 {
-                    g.DrawLine(p, cX, cY, x, y);
+                    a.DrawLine(p, cX, cY, x, y);
                 }
             }
         }
