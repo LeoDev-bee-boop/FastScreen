@@ -32,7 +32,7 @@ namespace FastScreen.Models
             }
             catch (Exception ex)
             {
-                throw(ex);
+                throw ex;
             }
         }
     }
