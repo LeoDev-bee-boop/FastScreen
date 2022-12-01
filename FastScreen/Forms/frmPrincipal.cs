@@ -15,104 +15,86 @@ namespace FastScreen.Forms
 {
     public partial class frmPrincipal : Form
     {
+
+        #region ..:: Propriedades ::..
+        Pen p = new Pen(Color.Black, 1);
+        Pen erase = new Pen(Color.White, 10);
+
         Bitmap bmp;
-        Bitmap bm;
+        Graphics g;
+        
+        Point px, py;
+
         int index;
         int x, y, sX, sY, cX, cY;
         bool paint = false;
-        Point px, py;
-        Pen p = new Pen(Color.Black, 1);
-        Pen erase = new Pen(Color.White, 10);
-        Graphics g;
+        #endregion ..:: Propriedades ::..
 
+        #region ..:: Construtor ::..
         public frmPrincipal()
         {
             InitializeComponent();
-
             //bm = new Bitmap(pdCapture.Width, pdCapture.Height);
             //g = Graphics.FromImage(bm);
             //g.Clear(Color.White);
             //pdCapture.Image = bm;
         }
+        #endregion ..:: Construtor ::..
 
-        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        #region ..:: Eventos ::..
+        //------------------------------------------------------------->
+        private void desenharToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Classe responsável as cordenadas da área de print
-            AreaRecortada area = new AreaRecortada();
-
-            //Chamando form que passara as coordenadas dos pixel da tela de print
-            using (frmSelectArea frmSelectArea = new frmSelectArea())
-                if (frmSelectArea.ShowDialog() == DialogResult.OK)
-                    area = frmSelectArea.retornaAreaSelecionada();
-
-            //Passando extremidades da área da print para um retângulo            
-            Rectangle rect = new Rectangle(area.x, area.y, area.w, area.h);
-            bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
-            Graphics graphics = Graphics.FromImage(bmp);
-            graphics.CopyFromScreen(rect.Left, rect.Top, 0, 0, area.s, CopyPixelOperation.SourceCopy);
-            pdCapture.Image = bmp;
-
-            g = Graphics.FromImage(pdCapture.Image);
-
+            index = 1;
         }
-
-        private void salvarToolStripMenuItem_Click(object sender, EventArgs e)
+        //------------------------------------------------------------->
+        private void oCRToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.CheckPathExists = true;
-            sfd.FileName = "Capture";
-            sfd.Filter = "PNG Image(*.png)|*.png|JPG Image(*.jpg)|*.jpg|BMP Image(*.bmp)|*.bmp";
-            if (sfd.ShowDialog() == DialogResult.OK)
+            CapturaOCR();
+        }
+        //------------------------------------------------------------->
+        private void pdCapture_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (paint)
             {
-                pdCapture.Image.Save(sfd.FileName);
+                if (index == 1)
+                {
+                    //Desenhado linha
+                    px = e.Location;
+                    g.DrawLine(p, px, py);
+                    py = px;
+                }
+                if (index == 2)
+                {
+                    //Desenhado Borracha
+                    px = e.Location;
+                    g.DrawLine(erase, px, py);
+                    py = px;
+                }
             }
-        }
+            pdCapture.Refresh();
 
-        private void frmPrincipal_Load_1(object sender, EventArgs e)
+            x = e.X;
+            y = e.Y;
+            sX = e.X - cX;
+            sY = e.Y - cY;
+        }
+        //------------------------------------------------------------->
+        private void copiarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SetClipboard();
         }
-
-        private void pdCapture_MouseUp(object sender, MouseEventArgs e)
+        //------------------------------------------------------------->
+        private void linhaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            paint = false;
-
-            sX = x - cX;
-            sY = y - cY;
-            
-            if (index == 3)
-            {
-                g.DrawEllipse(p, cX, cY, sX, sY);
-            }
-            if (index == 4)
-            {
-                g.DrawRectangle(p, cX, cY, sX, sY);
-            }
-            if (index == 5)
-            {
-                g.DrawLine(p, cX, cY, x, y);
-            }
+            index = 5;
         }
-
-        private void pdCapture_MouseDown(object sender, MouseEventArgs e)
+        //------------------------------------------------------------->
+        private void retânguloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            paint = true;
-            py = e.Location;
-
-            cX = e.X;
-            cY = e.Y;
+            index = 4;
         }
-
-        private void apagarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            index = 2;
-        }
-
-        private void elipseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            index = 3;
-        }
-
+        //------------------------------------------------------------->
         private void pdCapture_Paint(object sender, PaintEventArgs e)
         {
             Graphics a = e.Graphics;
@@ -133,43 +115,89 @@ namespace FastScreen.Forms
                 }
             }
         }
-
-        private void retânguloToolStripMenuItem_Click(object sender, EventArgs e)
+        //------------------------------------------------------------->
+        private void pdCapture_MouseUp(object sender, MouseEventArgs e)
         {
-            index = 4;
-        }
+            paint = false;
 
-        private void linhaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            index = 5;
-        }
+            sX = x - cX;
+            sY = y - cY;
 
-        private void pdCapture_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (paint)
+            if (index == 3)
             {
-                if (index == 1)
-                {
-                    px = e.Location;
-                    g.DrawLine(p, px, py);
-                    py = px;                    
-                }
-                if (index == 2)
-                {
-                    px = e.Location;
-                    g.DrawLine(erase, px, py);
-                    py = px;
-                }                
+                g.DrawEllipse(p, cX, cY, sX, sY);
             }
-            pdCapture.Refresh();
-
-            x = e.X;
-            y = e.Y;
-            sX = e.X - cX;
-            sY = e.Y - cY;
+            if (index == 4)
+            {
+                g.DrawRectangle(p, cX, cY, sX, sY);
+            }
+            if (index == 5)
+            {
+                g.DrawLine(p, cX, cY, x, y);
+            }
         }
+        //------------------------------------------------------------->
+        private void pdCapture_MouseDown(object sender, MouseEventArgs e)
+        {
+            paint = true;
+            py = e.Location;
 
-        private void oCRToolStripMenuItem_Click(object sender, EventArgs e)
+            cX = e.X;
+            cY = e.Y;
+        }
+        //------------------------------------------------------------->
+        private void apagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            index = 2;
+        }
+        //------------------------------------------------------------->
+        private void elipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            index = 3;
+        }
+        //------------------------------------------------------------->
+        private void salvarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.CheckPathExists = true;
+            sfd.FileName = "Capture";
+            sfd.Filter = "PNG Image(*.png)|*.png|JPG Image(*.jpg)|*.jpg|BMP Image(*.bmp)|*.bmp";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                pdCapture.Image.Save(sfd.FileName);
+            }
+        }
+        //------------------------------------------------------------->
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CapturaPrint();
+        }
+        //------------------------------------------------------------->
+        #endregion ..:: Eventos ::..
+
+        #region ..:: Métodos Auxiliares ::..
+        //------------------------------------------------------------->
+        private void CapturaPrint()
+        {
+            //Classe responsável as cordenadas da área de print
+            AreaRecortada area = new AreaRecortada();
+
+            //Chamando form que passara as coordenadas dos pixel da tela de print
+            using (frmSelectArea frmSelectArea = new frmSelectArea())
+                if (frmSelectArea.ShowDialog() == DialogResult.OK)
+                    area = frmSelectArea.retornaAreaSelecionada();
+
+            //Passando extremidades da área da print para um retângulo            
+            Rectangle rect = new Rectangle(area.x, area.y, area.w, area.h);
+            bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
+            Graphics graphics = Graphics.FromImage(bmp);
+            graphics.CopyFromScreen(rect.Left, rect.Top, 0, 0, area.s, CopyPixelOperation.SourceCopy);
+            pdCapture.Image = bmp;
+
+            g = Graphics.FromImage(pdCapture.Image);
+        }
+        //------------------------------------------------------------->
+        private void CapturaOCR()
         {
             //Instânciando classe
             OCR ocr = new OCR();
@@ -182,7 +210,12 @@ namespace FastScreen.Forms
 
             ocr.AnalisaImagem(imgByte);
         }
-
+        //------------------------------------------------------------->
+        private void SetClipboard()
+        {
+            Clipboard.SetImage(pdCapture.Image);
+        }
+        //------------------------------------------------------------->
         public byte[] ImageToByteArray(Image imagem)
         {
             using (MemoryStream mStream = new MemoryStream())
@@ -192,20 +225,9 @@ namespace FastScreen.Forms
                 return mStream.ToArray();
             }
         }
+        //------------------------------------------------------------->
+        #endregion ..:: Métodos Auxiliares ::..
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void SetClipboard()
-        {
-            Clipboard.SetImage(pdCapture.Image);
-        }
-
-        private void desenharToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            index = 1;
-        }
     }
 }

@@ -26,16 +26,13 @@ namespace FastScreen.Models
 
                             frmMessageBox frmMessage = new frmMessageBox(texto, precisao);
                             frmMessage.ShowDialog();
-
-                            //MessageBox.Show(page.GetText() + "\n\n" + "Taxa de Precisão{0}" + page.GetMeanConfidence());
                         }
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw(ex);
             }
         }
     }

@@ -40,6 +40,7 @@ namespace FastScreen.Forms
             this.elipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.retânguloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pdCapture = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -78,7 +79,8 @@ namespace FastScreen.Forms
             this.apagarToolStripMenuItem,
             this.elipseToolStripMenuItem,
             this.retânguloToolStripMenuItem,
-            this.linhaToolStripMenuItem});
+            this.linhaToolStripMenuItem,
+            this.copiarToolStripMenuItem});
             this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.ferramentasToolStripMenuItem.Image = global::FastScreen.Properties.Resources.toolbox;
             this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
@@ -155,6 +157,16 @@ namespace FastScreen.Forms
             this.linhaToolStripMenuItem.Text = "Linha";
             this.linhaToolStripMenuItem.Click += new System.EventHandler(this.linhaToolStripMenuItem_Click);
             // 
+            // copiarToolStripMenuItem
+            // 
+            this.copiarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
+            this.copiarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.copiarToolStripMenuItem.Image = global::FastScreen.Properties.Resources.copy;
+            this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copiarToolStripMenuItem.Text = "Copiar";
+            this.copiarToolStripMenuItem.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
+            // 
             // salvarToolStripMenuItem
             // 
             this.salvarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(2)))), ((int)(((byte)(2)))));
@@ -193,7 +205,6 @@ namespace FastScreen.Forms
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmPrincipal_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdCapture)).EndInit();
@@ -216,5 +227,6 @@ namespace FastScreen.Forms
         private System.Windows.Forms.ToolStripMenuItem elipseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem retânguloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem linhaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;
     }
 }
