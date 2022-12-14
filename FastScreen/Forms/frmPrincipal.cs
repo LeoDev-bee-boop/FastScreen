@@ -183,6 +183,12 @@ namespace FastScreen.Forms
         {
             CapturaPrint();
         }
+
+        private void limparToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            LimpaPictureBox();
+        }
+
         //------------------------------------------------------------->
         #endregion ..:: Eventos ::..
 

@@ -189,6 +189,7 @@ namespace FastScreen.Forms
             this.limparToolStripMenuItem.Name = "limparToolStripMenuItem";
             this.limparToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.limparToolStripMenuItem.Text = "Limpar";
+            this.limparToolStripMenuItem.Click += new System.EventHandler(this.limparToolStripMenuItem_Click_1);
             // 
             // salvarToolStripMenuItem
             // 
